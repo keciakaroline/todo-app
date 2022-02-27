@@ -1,0 +1,12 @@
+.SubmitForm {
+  font-family: var(--font-text);
+  text-align: center;
+  font-size: 18px;
+}
+
+.SubmitForm h1 {
+  color: white;
+  display: flex;
+  margin-left: 150px;
+  font-weight: 700;
+}
