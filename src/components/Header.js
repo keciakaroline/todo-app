@@ -16,10 +16,10 @@ export default function Header() {
   }
 
   return (
-    <div className="Header">
+    <header className="Header">
       <span className="icon-change" onClick={setLightModeBody}>
         {lightMode ? <MoonIcon /> : <SunIcon />}
       </span>
-    </div>
+    </header>
   );
 }

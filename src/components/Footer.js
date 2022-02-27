@@ -3,7 +3,7 @@ import "./styles/Footer.css";
 
 export default function Footer() {
   return (
-    <div className="Footer">
+    <footer className="Footer">
       This project was coded by{" "}
       <a
         href="https://www.linkedin.com/in/keciasantos/"
@@ -24,6 +24,6 @@ export default function Footer() {
       >
         Netlify.
       </a>
-    </div>
+    </footer>
   );
 }
