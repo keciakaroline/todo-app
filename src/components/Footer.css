@@ -1,0 +1,9 @@
+.Footer {
+  text-align: center;
+  font-family: var(--font-text);
+  font-size: 14px;
+}
+
+.Footer a {
+  /* text-decoration: none; */
+}
