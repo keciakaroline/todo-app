@@ -1,15 +1,3 @@
 :root {
   --font-text: "Josefin Sans", sans-serif;
 }
-
-body {
-  background-image: url(../src/images/bg-desktop-dark.jpg);
-  background-color: hsl(234, 39%, 85%);
-  background-repeat: no-repeat;
-}
-
-body.light-mode {
-  background-image: url(../src/images/bg-desktop-light.jpg);
-  background-color: hsl(236, 33%, 92%);
-  background-repeat: no-repeat;
-}

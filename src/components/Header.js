@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { ReactComponent as SunIcon } from "../images/icon-sun.svg";
-import { ReactComponent as MoonIcon } from "../images/icon-moon.svg";
+import "./styles/Header.css";
+import { ReactComponent as SunIcon } from "./styles/images/icon-sun.svg";
+import { ReactComponent as MoonIcon } from "./styles/images/icon-moon.svg";
 
 export default function Header() {
   let [lightMode, setLightMode] = useState(false);
-  const setLightModeBody = () => {
+  const handleClick = () => {
     setLightMode(!lightMode);
   };
 
@@ -16,10 +17,10 @@ export default function Header() {
   }
 
   return (
-    <header className="Header">
-      <span className="icon-change" onClick={setLightModeBody}>
+    <div className="Header">
+      <span className="icon-change" onClick={handleClick}>
         {lightMode ? <MoonIcon /> : <SunIcon />}
       </span>
-    </header>
+    </div>
   );
 }

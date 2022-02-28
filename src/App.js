@@ -1,14 +1,10 @@
 import "./App.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import SubmitForm from "./components/SubmitForm";
+import TodoList from "./components/TodoList";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <SubmitForm />
-      <Footer />
+      <TodoList />
     </div>
   );
 }

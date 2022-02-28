@@ -5,16 +5,22 @@
 // input + submit button
 
 import React from "react";
+import { BsCircle } from "react-icons/bs";
 import "./styles/SubmitForm.css";
 
 export default function SubmitForm() {
   return (
     <div className="SubmitForm">
-      <h1>T O D O</h1>
       <form>
-        <input className="input" placeholder="Create a new todo..." />
-        <button className="add-button" type="submit">
-          Add
+        {/* <input type="checkbox" className="todo-input" /> */}
+        <input
+          type="text"
+          placeholder="Create a new todo..."
+          className="todo-input"
+        />
+        {/* <BsCircle className="todo-circle" /> */}
+        <button className="todo-button" type="submit">
+          <i className="fas fa-plus-square"></i>
         </button>
       </form>
     </div>

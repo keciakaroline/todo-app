@@ -1,0 +1,13 @@
+h1 {
+  font-family: var(--font-text);
+  color: white;
+  display: inline-flex;
+  font-weight: 700;
+  font-size: 36px;
+  justify-content: flex-start;
+}
+
+.icon-change {
+  display: inline-flex;
+  justify-content: flex-end;
+}
