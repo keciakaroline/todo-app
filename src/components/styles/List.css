@@ -1,0 +1,47 @@
+.delete-btn {
+  width: 25px;
+  height: 25px;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+}
+.complete-btn {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: transparent;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.todo-item {
+  display: inline-block;
+  padding: 8px 10px;
+}
+
+.complete-btn:hover {
+  border-color: hsl(280, 87%, 65%);
+}
+
+.todo-item.completed {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.complete-btn.completed {
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border: none;
+}
+.complete-btn.completed::before {
+  /* content: ""; */
+  position: absolute;
+  /* top: 83px;
+  right: 225px; */
+  /* background-image: url(../styles/images/icon-check.svg); */
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  transition: 0.3s;
+}
