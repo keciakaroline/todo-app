@@ -1,15 +1,43 @@
 import React from "react";
+import "./styles/List.css";
 
-export default function List() {
+export default function List({ todo, text, todos, setTodos }) {
+  //todos={todos} setTodos={setTodos}
+  // delete action -> if the btn.id is = the input.id
+  const deleteHandler = () => {
+    setTodos(todos.filter((element) => element.id !== todo.id));
+  };
+
+  // complete action -> run for each
+  const completeHandler = () => {
+    setTodos(
+      todos.map((item) => {
+        if (item.id === todo.id) {
+          return {
+            ...item,
+            completed: !item.completed,
+          };
+        }
+        return item;
+      })
+    );
+  };
+
   return (
     <div className="List">
-      <li className="todo-item">Hey</li>
-      <button className="complete-btn">
-        <i className="fas fa-check"></i>
-      </button>
-      <button className="trash-btn">
-        <i className="fas fa-trash"></i>
-      </button>
+      <button
+        onClick={deleteHandler}
+        className="delete-btn"
+        // type="submit"
+      ></button>
+      <button
+        onClick={completeHandler}
+        className={`complete-btn ${todo.completed ? "completed" : ""}`}
+        // type="submit"
+      ></button>
+      <li className={`todo-item ${todo.completed ? "completed" : ""}`}>
+        {text}
+      </li>
     </div>
   );
 }
