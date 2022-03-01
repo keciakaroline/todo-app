@@ -1,0 +1,50 @@
+/* .SubmitForm {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.SubmitForm .todo-input {
+  font-family: var(--font-text);
+  width: 270px;
+  height: 40px;
+  border-radius: 4px;
+  padding: 5px;
+  border: 1px solid transparent;
+  outline: none;
+  font-size: 18px;
+} */
+
+.Form {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  border-radius: 5px;
+  padding-left: 17px;
+  box-shadow: 10px 10px 80px rgba(0, 0, 0, 0.4);
+}
+@media (min-width: 38em) {
+  .Form {
+    width: 550px;
+  }
+}
+
+.todo-button {
+  width: 25px;
+  height: 24px;
+  font-size: 0;
+  /* background: transparent; */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.Form input {
+  width: 100%;
+  padding: 23.5px 20px 20.5px;
+  /* background: transparent; */
+  border: none;
+  outline: none;
+}
+
+.Form input::placeholder {
+  opacity: 1;
+}

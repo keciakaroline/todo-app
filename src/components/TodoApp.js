@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import SubmitForm from "./SubmitForm";
-import List from "./List";
+import Form from "./Form";
+import ListContainer from "./ListContainer";
 import FilterTodo from "./FilterTodo";
 import "./styles/TodoApp.css";
 
 export default function TodoList() {
-  const [input, setInput] = React.useState("");
+  const [inputText, setinputText] = React.useState("");
   const [todos, setTodos] = React.useState([]);
 
   return (
@@ -16,8 +16,13 @@ export default function TodoList() {
       <header>
         <h1>T O D O</h1>
       </header>
-      <SubmitForm todos={todos} setTodos={setTodos} setInput={setInput} />
-      <List />
+      <Form
+        todos={todos}
+        setTodos={setTodos}
+        inputText={inputText}
+        setinputText={setinputText}
+      />
+      <ListContainer />
       <FilterTodo />
       <Footer />
     </>
