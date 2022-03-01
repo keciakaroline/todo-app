@@ -22,7 +22,7 @@ export default function TodoList() {
         inputText={inputText}
         setinputText={setinputText}
       />
-      <ListContainer />
+      <ListContainer todos={todos} setTodos={setTodos} />
       <FilterTodo />
       <Footer />
     </>

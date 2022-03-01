@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/FilterTodo.css";
 
 export default function FilterTodo() {
   return (
