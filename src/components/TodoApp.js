@@ -7,8 +7,9 @@ import FilterTodo from "./FilterTodo";
 import "./styles/TodoApp.css";
 
 export default function TodoList() {
-  const [inputText, setinputText] = React.useState("");
-  const [todos, setTodos] = React.useState([]);
+  const [inputText, setinputText] = useState("");
+  const [todos, setTodos] = useState([]);
+  const [filter, setFilter] = useState("All");
 
   return (
     <>
