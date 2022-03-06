@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles/List.css";
+import { ReactComponent as CrossIcon } from "./styles/images/icon-cross.svg";
 
 export default function List({ todo, text, todos, setTodos }) {
   //todos={todos} setTodos={setTodos}
@@ -26,11 +27,6 @@ export default function List({ todo, text, todos, setTodos }) {
   return (
     <div className="List">
       <button
-        onClick={deleteHandler}
-        className="delete-btn"
-        // type="submit"
-      ></button>
-      <button
         onClick={completeHandler}
         className={`complete-btn ${todo.completed ? "completed" : ""}`}
         // type="submit"
@@ -38,6 +34,7 @@ export default function List({ todo, text, todos, setTodos }) {
       <li className={`todo-item ${todo.completed ? "completed" : ""}`}>
         {text}
       </li>
+      <CrossIcon onClick={deleteHandler} className="delete-btn" />
     </div>
   );
 }
