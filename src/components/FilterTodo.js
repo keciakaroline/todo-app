@@ -2,15 +2,9 @@ import React from "react";
 import "./styles/FilterTodo.css";
 
 export default function FilterTodo({ filter, setFilter }) {
-  // filter tasks
-  let filterTasks = (filter) => {
-    setFilter(filter);
-  };
-
   const filterHandler = (event) => {
     //console.log(event.target.value);
     setFilter(event.target.value);
-    filterTasks(event.target.value);
   };
   return (
     <div className="filter-todo">
