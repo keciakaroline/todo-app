@@ -1,13 +1,15 @@
 body {
-  background-image: url(../styles/images/bg-desktop-dark.jpg);
+  background-image: url(./components/styles/images/bg-desktop-dark.jpg);
   background-color: hsl(234, 39%, 85%);
   background-repeat: no-repeat;
   font-family: "Josefin Sans", sans-serif;
+  width: 500px;
 }
 
 body.light-mode {
-  background-image: url(../styles/images/bg-desktop-light.jpg);
+  background-image: url(./components/styles/images/bg-desktop-light.jpg);
   background-color: hsl(236, 33%, 92%);
   background-repeat: no-repeat;
   font-family: "Josefin Sans", sans-serif;
+  width: 500px;
 }

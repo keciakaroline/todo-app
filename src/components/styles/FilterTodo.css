@@ -4,3 +4,23 @@
 .filters .active-filter:focus {
   color: hsl(220, 98%, 61%);
 } */
+
+.filter-todo {
+  color: wheat;
+}
+
+.filter-todo {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  width: 500px;
+}
+
+.clear-btn {
+  /* position: absolute;
+  left: 500px;
+  top: 225px; */
+  display: flex;
+
+  margin-top: 50px;
+}
