@@ -3,15 +3,15 @@ import List from "./List";
 import "./styles/ListContainer.css";
 
 export default function ListContainer({ todos, setTodos }) {
-  console.log(todos);
+  //console.log(todos);
   return (
     <div className="List">
       <ul className="todo-list">
-        {todos.map((todo) => (
+        {todos.map((todo, index) => (
           <List
             todos={todos}
             setTodos={setTodos}
-            key={todo.id}
+            key={index}
             text={todo.text}
             todo={todo}
           />
