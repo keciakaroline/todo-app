@@ -1,28 +1,45 @@
 import React from "react";
 import "./styles/FilterTodo.css";
 
-export default function FilterTodo() {
+export default function FilterTodo({ filter, setFilter }) {
+  // filter tasks
+  let filterTasks = (filter) => {
+    setFilter(filter);
+  };
+
+  const filterHandler = (event) => {
+    //console.log(event.target.value);
+    setFilter(event.target.value);
+    filterTasks(event.target.value);
+  };
   return (
-    <form>
-      <div className="select">
-        <select name="todos" className="filter-todo">
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="uncompleted">Uncompleted</option>
-        </select>
-      </div>
-    </form>
+    <div className="filter-todo">
+      <button
+        value="all"
+        onClick={filterHandler}
+        className={`filter-item ${filter === "all" ? "active-filter" : ""}`}
+        //activeclassName="active"
+      >
+        All
+      </button>
+      <button
+        value="active"
+        onClick={filterHandler}
+        className={`filter-item ${filter === "active" ? "active-filter" : ""}`}
+        //activeclassName="active"
+      >
+        Active
+      </button>
+      <button
+        value="completed"
+        onClick={filterHandler}
+        className={`filter-item ${
+          filter === "completed" ? "active-filter" : ""
+        }`}
+        //activeclassName="active"
+      >
+        Completed
+      </button>
+    </div>
   );
 }
-// <form>
-//   <div className="select">
-//     <ul className="filter-todo">
-//       <li className="filter-item" activeClassName="active">
-//        All</li>
-//       <li className="filter-item" activeClassName="active">
-//Completed</li>
-//       <li className="filter-item" activeClassName="active">
-//Uncompleted</li>
-//     </ul>
-//   </div>
-// </form>
