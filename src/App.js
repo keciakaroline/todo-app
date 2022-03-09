@@ -9,7 +9,7 @@ import "./App.css";
 function App() {
   const [inputText, setinputText] = useState("");
   const [todos, setTodos] = useState([]);
-  const [filter, setFilter] = useState("All");
+  const [status, setStatus] = useState("All");
 
   return (
     <div className="App">
@@ -22,10 +22,10 @@ function App() {
         setTodos={setTodos}
         inputText={inputText}
         setinputText={setinputText}
-        setFilter={setFilter} // Then go to where we have our selections
+        setstatus={setStatus} // Then go to where we have our selections
       />
       <ListContainer todos={todos} setTodos={setTodos} />
-      <FilterTodo />
+      <statusTodo />
       <Footer />
     </div>
   );
