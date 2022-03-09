@@ -1,6 +1,3 @@
-// we need to create a 'form' element that contains 2 elements:
-// input + submit button
-
 import React from "react";
 import "./styles/Form.css";
 
@@ -35,8 +32,8 @@ export default function Form({ inputText, setinputText, todos, setTodos }) {
         <input
           type="text"
           placeholder="Create a new todo..."
-          value={inputText}
           className="todo-input"
+          value={inputText}
           onChange={inputHandler}
           onKeyDown={keyDownHandler}
         />

@@ -3,7 +3,6 @@ import "./styles/List.css";
 import { ReactComponent as CrossIcon } from "./styles/images/icon-cross.svg";
 
 export default function List({ todo, text, todos, setTodos }) {
-  //todos={todos} setTodos={setTodos}
   // delete action -> if the btn.id is = the input.id
   const deleteHandler = () => {
     setTodos(todos.filter((element) => element.id !== todo.id));
