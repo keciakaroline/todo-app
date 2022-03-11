@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Form from "./components/Form";
@@ -7,9 +7,31 @@ import FilterTodo from "./components/FilterTodo";
 import "./App.css";
 
 function App() {
+  // use state
   const [inputText, setinputText] = useState("");
   const [todos, setTodos] = useState([]);
-  const [status, setStatus] = useState("All");
+  const [status, setStatus] = useState("all");
+  const [filter, setFilter] = useState([]);
+
+  // use effect
+  useEffect(() => {
+    filterHandler();
+  }, [todos, status]);
+
+  // create a filter
+  const filterHandler = () => {
+    switch (status) {
+      case "completed":
+        setFilter(todos.filter((todo) => todo.completed === true));
+        break;
+      case "active":
+        setFilter(todos.filter((todo) => todo.completed === false));
+        break;
+      default:
+        setFilter(todos);
+        break;
+    }
+  };
 
   return (
     <div className="App">
@@ -18,14 +40,15 @@ function App() {
         <h1>T O D O</h1>
       </header>
       <Form
-        todos={todos}
-        setTodos={setTodos}
         inputText={inputText}
         setinputText={setinputText}
-        setstatus={setStatus} // Then go to where we have our selections
+        todos={todos}
+        setTodos={setTodos}
       />
-      <ListContainer todos={todos} setTodos={setTodos} />
-      <statusTodo />
+      <ListContainer todos={todos} setTodos={setTodos} filter={filter} />
+      <FilterTodo
+        setStatus={setStatus} // Then go to where we have our selections
+      />
       <Footer />
     </div>
   );
