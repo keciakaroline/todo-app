@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Form from "./components/Form";
 import ListContainer from "./components/ListContainer";
 import FilterTodo from "./components/FilterTodo";
+import DeleteTask from "./components/DeleteTask";
 import "./App.css";
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
       <FilterTodo
         setStatus={setStatus} // Then go to where we have our selections
       />
+      <DeleteTask todos={todos} setTodos={setTodos} />
       <Footer />
     </div>
   );
