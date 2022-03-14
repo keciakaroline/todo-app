@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/ClearTask.css";
 
 export default function ClearTask({ todos, setTodos }) {
   // delete all tasks
@@ -8,11 +9,24 @@ export default function ClearTask({ todos, setTodos }) {
     });
     setTodos(deleted);
   };
+
+  const itemsLeft = () => {
+    let completedItems = [];
+    let totalItems = todos.length;
+    completedItems = todos.filter((todo) => todo.completed === true);
+    return totalItems - completedItems.length;
+  };
+
   return (
     <div className="ClearTask">
-      <button value="clear" onClick={clearTask}>
-        Clear Completed
-      </button>
+      <div className="itensLeft">
+        <span>{itemsLeft()} items left</span>
+      </div>
+      <div>
+        <button className="clearBtn" value="clear" onClick={clearTask}>
+          Clear Completed
+        </button>
+      </div>
     </div>
   );
 }

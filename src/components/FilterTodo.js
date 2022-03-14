@@ -9,9 +9,6 @@ export default function FilterTodo({ status, setStatus }) {
 
   return (
     <div className="filter-todo">
-      <div className="itens-left">
-        <span>x items left</span>
-      </div>
       <div className="buttons">
         <button
           value="all"

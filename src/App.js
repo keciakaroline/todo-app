@@ -13,6 +13,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filter, setFilter] = useState([]);
+  const [taskLeft, setTaskLeft] = useState(0);
 
   // use effect
   useEffect(() => {
@@ -51,7 +52,7 @@ function App() {
         setStatus={setStatus} // Then go to where we have our selections
       />
       <ClearTask todos={todos} setTodos={setTodos} />
-      <p>Drag and drop to reorder list</p>
+      <p className="drag-drop-line">Drag and drop to reorder list</p>
       <Footer />
     </div>
   );
