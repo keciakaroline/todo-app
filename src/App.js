@@ -13,7 +13,6 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filter, setFilter] = useState([]);
-  const [taskLeft, setTaskLeft] = useState(0);
 
   // use effect
   useEffect(() => {

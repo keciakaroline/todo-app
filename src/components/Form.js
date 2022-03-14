@@ -10,6 +10,7 @@ export default function Form({ inputText, setinputText, todos, setTodos }) {
 
   // add enter key event
   const keyDownHandler = (event) => {
+    event.preventDefault();
     if (event.keyCode === 13) submitHandler();
   };
 

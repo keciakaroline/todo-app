@@ -11,9 +11,10 @@ export default function ListContainer({ todos, setTodos, filter }) {
           <List
             todos={todos}
             setTodos={setTodos}
-            key={index}
+            key={todo.id}
             text={todo.text}
             todo={todo}
+            index={index}
           />
         ))}
       </ul>
