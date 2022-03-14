@@ -4,7 +4,15 @@ import "./styles/Footer.css";
 export default function Footer() {
   return (
     <footer className="Footer">
-      This project was coded by{" "}
+      This project was a challenge by{" "}
+      <a
+        href="https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        frontmentor.io
+      </a>
+      , coded by{" "}
       <a
         href="https://www.linkedin.com/in/keciasantos/"
         target="_blank"

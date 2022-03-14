@@ -8,7 +8,7 @@ export default function Form({ inputText, setinputText, todos, setTodos }) {
     setinputText(event.target.value);
   };
 
-  // add enter key reaction
+  // add enter key event
   const keyDownHandler = (event) => {
     if (event.keyCode === 13) submitHandler();
   };

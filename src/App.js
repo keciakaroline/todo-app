@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Form from "./components/Form";
 import ListContainer from "./components/ListContainer";
 import FilterTodo from "./components/FilterTodo";
-import DeleteTask from "./components/DeleteTask";
+import ClearTask from "./components/ClearTask";
 import "./App.css";
 
 function App() {
@@ -50,7 +50,8 @@ function App() {
       <FilterTodo
         setStatus={setStatus} // Then go to where we have our selections
       />
-      <DeleteTask todos={todos} setTodos={setTodos} />
+      <ClearTask todos={todos} setTodos={setTodos} />
+      <p>Drag and drop to reorder list</p>
       <Footer />
     </div>
   );

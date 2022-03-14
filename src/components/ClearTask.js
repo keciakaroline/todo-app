@@ -1,17 +1,17 @@
 import React from "react";
 
-export default function DeleteTask({ todos, setTodos }) {
+export default function ClearTask({ todos, setTodos }) {
   // delete all tasks
-  const deleteTask = () => {
+  const clearTask = () => {
     let deleted = todos.filter((todo) => {
       return !todo.completed;
     });
     setTodos(deleted);
   };
   return (
-    <div className="DeleteTask">
-      <button value="clear" onClick={deleteTask}>
-        Clear all tasks
+    <div className="ClearTask">
+      <button value="clear" onClick={clearTask}>
+        Clear Completed
       </button>
     </div>
   );
