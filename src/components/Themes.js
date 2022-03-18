@@ -56,11 +56,13 @@ export const GlobalStyles = createGlobalStyle`
   .itensLeft,
   .clear-completed.btn,
   .filter-todo button,
-  .drag-drop-line{
+  .drag-drop-line,
+  .Footer {
     color: ${({ theme }) => theme.placeholderAndCompletedTask}
   }
 
-  .List{
+  .List, 
+  .Footer{
     background: ${({ theme }) => theme.todoBackground}
     color: ${({ theme }) => theme.text}
     border-bottom: ${({ theme }) => theme.todoBorder}
@@ -72,7 +74,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .filter-todo button:focus,
-  .filter-todo button:hover{
+  .filter-todo button:hover,
+  .Footer a:hover,
+  .Footer a:focus{
     color: ${({ theme }) => theme.filtersBtnHover}
   }
 

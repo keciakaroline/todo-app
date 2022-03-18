@@ -1,10 +1,9 @@
 .Footer {
+  margin-top: 50px;
   text-align: center;
-  font-family: var(--font-text);
   font-size: 14px;
-  color: black;
 }
 
 .Footer a {
-  color: black;
+  text-decoration: none;
 }

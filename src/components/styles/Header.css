@@ -6,7 +6,7 @@
   margin: 50px 0 25px;
 }
 
-/* @media (min-width: 38em) {
+/* @media (max-width: 375px) {
   .header {
     margin: 70px 0 40px;
     width: 550px;

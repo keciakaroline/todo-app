@@ -1,7 +1,7 @@
-.ClearTask {
+/* .ClearTask {
   margin-top: 50px;
   width: 500px;
-}
+} */
 
 .clearBtn {
   font-family: "Josefin Sans", sans-serif;
@@ -12,11 +12,6 @@
   transition: 0.3s;
   padding: 5px 0 5px;
   font-weight: 500;
-}
-
-.clearBtn:hover,
-.clearBtn:focus {
-  color: hsl(220, 98%, 61%);
 }
 
 .itensLeft span {

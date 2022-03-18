@@ -18,12 +18,42 @@ html.dark body {
   flex-direction: column;
 }
 
+.drag-drop-line {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 50px;
+}
+.container {
+  width: 90%;
+  margin-top: 20px;
+  border-radius: 5px;
+  /* overflow: hidden; */
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+.items-filters-clear-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px 16px;
+}
 /* @media (max-width: 375px) {
   html.dark body {
     background-size: 100% 280px;
     background-image: url(./components/styles/images/bg-mobile-dark.jpg);
   }
+
   html body {
     background-image: url(./components/styles/images/bg-mobile-light.jpg);
   }
+
+  .container{
+    width: 550px
+  }
+
+  .drag-drop-line {
+  position: absolute;
+  bottom: 25px;
+  font-weight: 500;
+  opacity: 0;
+}
 } */

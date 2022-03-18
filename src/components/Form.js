@@ -33,7 +33,7 @@ export default function Form({ inputText, setinputText, todos, setTodos }) {
         <input
           type="text"
           placeholder="Create a new todo..."
-          className="todo-input"
+          // className="todo-input"
           value={inputText}
           onChange={inputHandler}
           onKeyDown={keyDownHandler}
