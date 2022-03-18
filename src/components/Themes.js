@@ -79,5 +79,4 @@ export const GlobalStyles = createGlobalStyle`
   .todo-list {
     scrollbar-color: hsl(233, 13%, 49%) ${({ theme }) => theme.todoBackground}
 
-  
   `;

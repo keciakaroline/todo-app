@@ -38,7 +38,18 @@ function App() {
   };
 
   const themeToggler = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
+    if (theme === "light") {
+      setTheme("dark");
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      setTheme("light");
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
   };
 
   return (

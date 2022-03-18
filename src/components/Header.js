@@ -3,7 +3,7 @@ import "./styles/Header.css";
 import { ReactComponent as SunIcon } from "./styles/images/icon-sun.svg";
 import { ReactComponent as MoonIcon } from "./styles/images/icon-moon.svg";
 
-export default function Header({ theme, setTheme, themeToggler }) {
+export default function Header({ theme, themeToggler }) {
   const [rotate, setRotate] = useState(false);
   // change theme when clicking the icon
   const handleTheme = () => {
@@ -22,7 +22,7 @@ export default function Header({ theme, setTheme, themeToggler }) {
         className={`theme-change ${rotate ? "rotate" : ""}`}
         onClick={handleTheme}
       >
-        {theme === "dark" ? <MoonIcon /> : <SunIcon />}
+        {theme === "dark" ? <SunIcon /> : <MoonIcon />}
       </button>
     </div>
   );
