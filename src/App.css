@@ -3,13 +3,15 @@
   background-color: hsl(234, 39%, 85%);
   background-repeat: no-repeat;
   font-family: "Josefin Sans", sans-serif;
-  width: 500px;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.App.light-mode {
+[data-theme="light"] .App {
+  background-image: url(./components/styles/images/bg-desktop-light.jpg);
+}
+/* .App.light-mode {
   background-image: url(./components/styles/images/bg-desktop-light.jpg);
   background-color: hsl(236, 33%, 92%);
   background-repeat: no-repeat;
@@ -18,4 +20,4 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-}
+} */

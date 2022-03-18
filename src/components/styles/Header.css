@@ -1,13 +1,34 @@
-h1 {
-  font-family: var(--font-text);
-  color: white;
-  display: inline-flex;
-  font-weight: 700;
-  font-size: 36px;
-  justify-content: flex-start;
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 50px 0 25px;
 }
 
-.icon-change {
-  display: inline-flex;
-  justify-content: flex-end;
+/* @media (min-width: 38em) {
+  .header {
+    margin: 70px 0 40px;
+    width: 550px;
+  }
+} */
+
+.title {
+  color: #fff;
+  font-size: 2.5rem;
+  letter-spacing: 12px;
+}
+
+.theme-change {
+  padding: 7px 7px 5px;
+  margin-right: -7px;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.theme-change.rotate {
+  transform: rotate(360deg);
 }

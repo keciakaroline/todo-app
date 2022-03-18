@@ -5,6 +5,8 @@ import Form from "./components/Form";
 import ListContainer from "./components/ListContainer";
 import FilterTodo from "./components/FilterTodo";
 import ClearTask from "./components/ClearTask";
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme, GlobalStyles } from "./components/Themes";
 import "./App.css";
 
 function App() {
@@ -13,8 +15,9 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filter, setFilter] = useState([]);
+  const [theme, setTheme] = useState("light");
 
-  // use effect
+  // use effect for everytime we change todos, status -> filter
   useEffect(() => {
     filterHandler();
   }, [todos, status]);
@@ -34,26 +37,36 @@ function App() {
     }
   };
 
+  const themeToggler = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
+
   return (
-    <div className="App">
-      <Header />
-      <header>
-        <h1>T O D O</h1>
-      </header>
-      <Form
-        inputText={inputText}
-        setinputText={setinputText}
-        todos={todos}
-        setTodos={setTodos}
-      />
-      <ListContainer todos={todos} setTodos={setTodos} filter={filter} />
-      <FilterTodo
-        setStatus={setStatus} // Then go to where we have our selections
-      />
-      <ClearTask todos={todos} setTodos={setTodos} />
-      <p className="drag-drop-line">Drag and drop to reorder list</p>
-      <Footer />
-    </div>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <GlobalStyles />
+
+      <main className="App">
+        <Header themeToggler={themeToggler} theme={theme} />
+
+        <Form
+          inputText={inputText}
+          setinputText={setinputText}
+          todos={todos}
+          setTodos={setTodos}
+        />
+        <div className="container">
+          <ListContainer todos={todos} setTodos={setTodos} filter={filter} />
+          <div className="items-filters-clear-container">
+            <FilterTodo
+              setStatus={setStatus} // Then go to where we have our selections
+            />
+            <ClearTask todos={todos} setTodos={setTodos} />
+          </div>
+          <p className="drag-drop-line">Drag and drop to reorder list</p>
+        </div>
+        <Footer />
+      </main>
+    </ThemeProvider>
   );
 }
 
