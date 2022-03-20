@@ -1,24 +1,101 @@
+.List {
+  display: flex;
+  align-items: center;
+  padding-left: 0px;
+  /* max-height: 300px; */
+  /* overflow: auto; */
+
+  margin-bottom: -5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.complete-btn {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  background: transparent;
+  margin-right: 18px;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.complete-btn:hover {
+  border-color: hsl(280, 87%, 65%);
+}
+
+.complete-btn.completed::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0.5px;
+  width: 100%;
+  height: 100%;
+  background-image: url(./images/icon-check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.complete-btn.completed {
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border: 0;
+}
+
+/* .todo-item {
+  width: 370px;
+  margin-bottom: -5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+} */
+
+.todo-item.completed {
+  text-decoration: line-through;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  margin: 0 0 -4px auto;
+  outline: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.List:hover .delete-btn,
+.delete-btn:focus {
+  opacity: 1;
+}
+
+/*
 .delete-btn {
   width: 25px;
   height: 25px;
   background: transparent;
   border-radius: 50%;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
+  padding-top: 10px;
 }
-.complete-btn {
+/* .complete-btn {
   width: 25px;
   height: 25px;
   border-radius: 50%;
   cursor: pointer;
   background: transparent;
-  display: inline-block;
-  margin-left: 5px;
-}
-
+  display: inline-flex;
+  padding-top: 10px;
+  opacity: 0.3;
+} */
+/* 
 .todo-item {
-  display: inline-block;
-  padding: 8px 10px;
+  display: inline-flex;
+  padding: 25px 20px 20.5px;
 }
 
 .complete-btn:hover {
@@ -34,14 +111,14 @@
   background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   border: none;
 }
-.complete-btn.completed::before {
-  /* content: ""; */
-  position: absolute;
-  /* top: 83px;
+.complete-btn.completed::before { */
+/* content: ""; */
+/* position: absolute; */
+/* top: 83px;
   right: 225px; */
-  /* background-image: url(../styles/images/icon-check.svg); */
-  background-repeat: no-repeat;
+/* background-image: url(../styles/images/icon-check.svg); */
+/* background-repeat: no-repeat;
   background-position: center;
   border-radius: 50%;
   transition: 0.3s;
-}
+}  */

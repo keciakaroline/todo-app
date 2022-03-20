@@ -1,20 +1,24 @@
+/* @media screen and (max-width: 1440px) { */
 .Form {
   display: flex;
   align-items: center;
   border-radius: 5px;
-  padding-left: 17px;
+  padding-left: 20px;
   box-shadow: 10px 10px 80px rgba(0, 0, 0, 0.4);
-  font-size: 18px;
-  font-family: "Josefin Sans", sans-serif;
-}
-.Form input {
   width: 90%;
-  padding: 23.5px 20px 20.5px;
+  height: 70px;
+}
+
+.todo-input {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  padding: 25px 20px 20.5px;
   background: transparent;
   border: none;
   outline: none;
 }
-.Form input::placeholder {
+
+.Form .todo-input::placeholder {
   opacity: 1;
 }
 
@@ -25,23 +29,17 @@
   background: transparent;
   border-radius: 50%;
   cursor: pointer;
+  padding-top: 10px;
+  opacity: 0.2;
 }
 
-@media (max-width: 375px) {
-  /* .Form {
+/*@media (max-width: 375px) {
+   .Form {
     width: 550px;
-  } */
-}
+  } 
+} /*
 
 /* }
-.Form {
-  display: flex;
-  align-items: center;
-  width: 90%;
-  border-radius: 5px;
-  padding-left: 17px;
-  box-shadow: 10px 10px 80px rgba(0, 0, 0, 0.4);
-}
 @media (min-width: 38em) {
   .Form {
     width: 550px;

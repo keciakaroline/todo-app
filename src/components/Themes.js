@@ -38,7 +38,7 @@ export const GlobalStyles = createGlobalStyle`
   .Form,
   .items-filters-clear-container,
   .filter-todo,
-  .todo-list::-webkit-scrollbar-track{
+  .todo-list{
     background: ${({ theme }) => theme.todoBackground} 
   }
 
@@ -47,7 +47,8 @@ export const GlobalStyles = createGlobalStyle`
     border: 1px solid ${({ theme }) => theme.checkboxBorder}
   }
 
-  .Form input{
+  .todo-input,
+  .todo-item{
     color: ${({ theme }) => theme.text}
   }
 
@@ -57,14 +58,21 @@ export const GlobalStyles = createGlobalStyle`
   .clear-completed.btn,
   .filter-todo button,
   .drag-drop-line,
+  .complete-btn button:focus,
+  .complete-btn button:hover,
   .Footer {
     color: ${({ theme }) => theme.placeholderAndCompletedTask}
   }
 
-  .List, 
+  
+  .List,
   .Footer{
     background: ${({ theme }) => theme.todoBackground}
     color: ${({ theme }) => theme.text}
+    border-bottom: ${({ theme }) => theme.todoBorder}
+  }
+
+  .List {
     border-bottom: ${({ theme }) => theme.todoBorder}
   }
 
@@ -75,6 +83,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .filter-todo button:focus,
   .filter-todo button:hover,
+
   .Footer a:hover,
   .Footer a:focus{
     color: ${({ theme }) => theme.filtersBtnHover}

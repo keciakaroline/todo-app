@@ -24,10 +24,10 @@ html.dark body {
   margin-top: 50px;
 }
 .container {
-  width: 90%;
+  width: 737px;
   margin-top: 20px;
   border-radius: 5px;
-  /* overflow: hidden; */
+  overflow: hidden;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 }
 .items-filters-clear-container {

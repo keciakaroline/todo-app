@@ -4,13 +4,13 @@ import "./styles/Form.css";
 export default function Form({ inputText, setinputText, todos, setTodos }) {
   // changing the value of inputText
   const inputHandler = (event) => {
-    // console.log(event.target.value);
+    //console.log(event.target.value);
     setinputText(event.target.value);
   };
 
   // add enter key event
   const keyDownHandler = (event) => {
-    event.preventDefault();
+    //event.preventDefault();
     if (event.keyCode === 13) submitHandler();
   };
 
@@ -33,7 +33,7 @@ export default function Form({ inputText, setinputText, todos, setTodos }) {
         <input
           type="text"
           placeholder="Create a new todo..."
-          // className="todo-input"
+          className="todo-input"
           value={inputText}
           onChange={inputHandler}
           onKeyDown={keyDownHandler}
