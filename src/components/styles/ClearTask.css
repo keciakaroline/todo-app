@@ -1,19 +1,13 @@
-/* .ClearTask {
-  margin-top: 50px;
-  width: 500px;
-} */
-
+.items-left span {
+  font-weight: 500;
+}
 .clearBtn {
   font-family: "Josefin Sans", sans-serif;
-  cursor: pointer;
+  font-weight: 500;
+  padding: 5px 0 5px;
   background: none;
   border: none;
   outline: none;
   transition: 0.3s;
-  padding: 5px 0 5px;
-  font-weight: 500;
-}
-
-.itensLeft span {
-  font-weight: 500;
+  cursor: pointer;
 }
