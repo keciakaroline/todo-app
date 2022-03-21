@@ -12,8 +12,10 @@
   padding: 5px 10px;
   font-weight: 500;
 }
-
-.buttons .filter-item:hover,
-.buttons .filter-item:focus {
-  color: hsl(220, 98%, 61%);
+/* 
+.filter-todo .buttons .active-filter {
 }
+.filter-todo .buttons .active-filter:hover,
+.filter-todo .buttons .active-filter:focus {
+  color: hsl(220, 98%, 61%);
+} */

@@ -9,6 +9,7 @@ export const lightTheme = {
   placeholderAndCompletedTask: "hsl(236, 9%, 61%)",
   clearCompletedBtnHover: "hsl(235, 19%, 35%)",
   filtersBtnHover: "hsl(235, 21%, 11%)",
+  btnFocus: "hsl(220, 98%, 61%)",
 
   // 'hsl(236, 9%, 61%)',
   // 'hsl(233, 11%, 84%)',
@@ -24,6 +25,7 @@ export const darkTheme = {
   todoBorder: "hsl(237, 14%, 26%)",
   checkboxBorder: "hsl(234, 11%, 52%)",
   clearCompletedBtnHover: "hsl(234, 39%, 85%)",
+  btnFocus: "hsl(220, 98%, 61%)",
 
   // hsl(234, 11%, 52%),
   // hsl(236, 33%, 92%),
@@ -53,7 +55,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .Form input::placeholder,
-  .complete-btn.completed ~ .todo-item,
+  .complete-btn.completed .todo-item,
   .itensLeft,
   .clear-completed.btn,
   .filter-todo button,
@@ -81,8 +83,11 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.clearCompletedBtnHover}
   }
 
-  .filter-todo button:focus,
-  .filter-todo button:hover,
+  .buttons button:focus {
+    color: ${({ theme }) => theme.btnFocus} 
+  }
+
+  .buttons button:hover,
   .Footer a:hover,
   .Footer a:focus{
     color: ${({ theme }) => theme.filtersBtnHover}

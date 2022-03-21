@@ -21,25 +21,19 @@
   opacity: 0.7;
 }
 
-.todo-item:hover,
-.delete-btn {
-  background: transparent !important;
-  border: none !important;
-  cursor: pointer !important;
-  opacity: 1 !important;
-  margin-right: 25px !important;
-}
-
 .delete-btn.completed {
   background: transparent;
   border: none;
   cursor: pointer;
   opacity: 1;
   margin-right: 25px;
+  transition: 0.3s;
 }
 
 .delete-btn {
   opacity: 0;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .complete-btn {
@@ -79,17 +73,3 @@
   transition: 0.3s;
   background-image: url(./images/icon-check.svg);
 }
-
-/* 
-
-.complete-btn.completed::before { */
-/* content: ""; */
-/* position: absolute; */
-/* top: 83px;
-  right: 225px; */
-/* background-image: url(../styles/images/icon-check.svg); */
-/* background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 50%;
-  transition: 0.3s;
-}  */
