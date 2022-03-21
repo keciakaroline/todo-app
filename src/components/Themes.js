@@ -31,7 +31,7 @@ export const darkTheme = {
 };
 
 export const GlobalStyles = createGlobalStyle`
-  body {
+  body{
     background-color: ${({ theme }) => theme.bodyBackground};
   }
 
@@ -65,7 +65,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   
-  .List,
+  .todo-item,
   .Footer{
     background: ${({ theme }) => theme.todoBackground}
     color: ${({ theme }) => theme.text}
@@ -83,13 +83,9 @@ export const GlobalStyles = createGlobalStyle`
 
   .filter-todo button:focus,
   .filter-todo button:hover,
-
   .Footer a:hover,
   .Footer a:focus{
     color: ${({ theme }) => theme.filtersBtnHover}
   }
-
-  .todo-list {
-    scrollbar-color: hsl(233, 13%, 49%) ${({ theme }) => theme.todoBackground}
 
   `;

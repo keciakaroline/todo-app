@@ -33,7 +33,10 @@ export default function List({ todo, text, todos, setTodos }) {
       <li className={`todo-item ${todo.completed ? "completed" : ""}`}>
         {text}
       </li>
-      <CrossIcon onClick={deleteHandler} className="delete-btn" />
+      <CrossIcon
+        onClick={deleteHandler}
+        className={`delete-btn ${todo.completed ? "completed" : ""}`}
+      />
     </div>
   );
 }
