@@ -30,12 +30,15 @@ html.dark body {
   overflow: hidden;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 }
-/* .items-filters-clear-container {
+.items-filters-clear-container {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 20px 16px; */
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 18px 20px 16px;
-} */
+  padding: 15px;
+}
 /* @media (max-width: 375px) {
   html.dark body {
     background-size: 100% 280px;

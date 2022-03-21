@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Form from "./components/Form";
 import ListContainer from "./components/ListContainer";
 import FilterTodo from "./components/FilterTodo";
-import ClearTask from "./components/ClearTask";
+import { TaskLeft, ClearTask } from "./components/ClearTask";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from "./components/Themes";
 import "./App.css";
@@ -88,6 +88,7 @@ export default function App() {
         <div className="container">
           <ListContainer todos={todos} setTodos={setTodos} filter={filter} />
           <div className="items-filters-clear-container">
+            <TaskLeft todos={todos} />
             <FilterTodo
               setStatus={setStatus} // Then go to where we have our selections
             />

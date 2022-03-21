@@ -1,21 +1,24 @@
-.filter-todo {
+/* .filter-todo {
   width: 500px;
   margin-top: 50px;
-}
-.buttons .filter-item {
+} */
+
+.filter-todo .buttons .filter-item {
   font-family: "Josefin Sans", sans-serif;
-  cursor: pointer;
-  background: none;
+  /* cursor: pointer;
+  font-weight: 400;
   border: none;
+  background: none;
   outline: none;
   transition: 0.3s;
-  padding: 5px 10px;
-  font-weight: 500;
+  padding: 5px 10px; */
+  display: flex;
+  justify-content: center;
+
+  gap: 20px;
+  padding: 15px 20px;
 }
-/* 
-.filter-todo .buttons .active-filter {
+
+.buttons .filter-item:hover {
+  font-weight: 700;
 }
-.filter-todo .buttons .active-filter:hover,
-.filter-todo .buttons .active-filter:focus {
-  color: hsl(220, 98%, 61%);
-} */
