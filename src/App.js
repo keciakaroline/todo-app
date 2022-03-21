@@ -9,7 +9,7 @@ import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from "./components/Themes";
 import "./App.css";
 
-function App() {
+export default function App() {
   // use state
   const [inputText, setinputText] = useState("");
   const [todos, setTodos] = useState([]);
@@ -17,9 +17,15 @@ function App() {
   const [filter, setFilter] = useState([]);
   const [theme, setTheme] = useState("light");
 
+  // run once when the app start
+  useEffect(() => {
+    getLocalTodos();
+  }, []);
+
   // use effect for everytime we change todos, status -> filter
   useEffect(() => {
     filterHandler();
+    saveLocalTodos();
   }, [todos, status]);
 
   // create a filter
@@ -52,6 +58,20 @@ function App() {
     }
   };
 
+  //save to local
+  const saveLocalTodos = () => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  };
+
+  const getLocalTodos = () => {
+    if (localStorage.getItem("todos") === null) {
+      localStorage.setItem("todos", JSON.stringify([]));
+    } else {
+      let todoLocal = JSON.parse(localStorage.getItem("todos"));
+      setTodos(todoLocal);
+    }
+  };
+
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
@@ -80,5 +100,3 @@ function App() {
     </ThemeProvider>
   );
 }
-
-export default App;
