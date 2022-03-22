@@ -1,27 +1,33 @@
 import { createGlobalStyle } from "styled-components";
 
 export const lightTheme = {
-  text: "hsl(235, 21%, 11%)",
-  bodyBackground: "hsl(236, 33%, 92%)",
-  todoBackground: "hsl(0, 0%, 98%)",
-  todoBorder: "hsl(233, 11%, 84%)",
+  bodyBackground: "hsl(0, 0%, 98%)",
+  todoBackground: "hsl(0, 0%, 100%)",
+  btnFilter: "hsl(235, 19%, 35%)",
+  btnFocusFilter: "hsl(220, 98%, 61%)",
+  btnHoverFilter: "hsl(235, 19%, 35%)",
+  btnHoverClearCompleted: "hsl(235, 19%, 35%)",
+  itemsLeftClearCompletedDragAndDrop: "hsl(236, 9%, 61%)",
   checkboxBorder: "hsl(236, 9%, 61%)",
-  placeholderAndCompletedTask: "hsl(236, 9%, 61%)",
-  clearCompletedBtnHover: "hsl(235, 19%, 35%)",
-  filtersBtnHover: "hsl(235, 21%, 11%)",
-  btnFocus: "hsl(220, 98%, 61%)",
+  text: "hsl(235, 19%, 35%)",
+  todoBorder: "hsl(0, 0%, 98%)",
+
+  //   checkboxBorder: "hsl(236, 9%, 61%)" ???
 };
 
 export const darkTheme = {
   bodyBackground: "hsl(235, 21%, 11%)",
   todoBackground: "hsl(235, 24%, 19%)",
-  text: "hsl(234, 39%, 85%)",
-  filtersBtnHover: "hsl(236, 33%, 92%)",
-  placeholderAndCompletedTask: "hsl(234, 11%, 52%)",
-  todoBorder: "hsl(237, 14%, 26%)",
+  btnFilter: "hsl(237, 25%, 84%)",
+  btnFocusFilter: "hsl(220, 98%, 61%)",
+  btnHoverFilter: "hsl(237, 25%, 84%)",
+  btnHoverClearCompleted: "hsl(236, 33%, 92%)",
+  itemsLeftClearCompletedDragAndDrop: "hsl(234, 11%, 52%)",
   checkboxBorder: "hsl(234, 11%, 52%)",
-  clearCompletedBtnHover: "hsl(234, 39%, 85%)",
-  btnFocus: "hsl(220, 98%, 61%)",
+  text: "hsl(237, 25%, 84%)",
+  todoBorder: "hsl(0, 0%, 98%)",
+
+  //   checkboxBorder: "hsl(234, 11%, 52%)", ???
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -30,56 +36,46 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .Form,
-  .items-filters-clear-container,
-  .filter-todo,
-  .todo-list{
-    background: ${({ theme }) => theme.todoBackground} 
+  .List,
+  .container{
+    background-color: ${({ theme }) => theme.todoBackground};
+  }
+
+  .Form,
+  .List,
+  .Form .todo-input::placeholder {
+    color: ${({ theme }) => theme.text};
+  }
+
+  .Form .todo-input {
+    color: ${({ theme }) => theme.text};
+  }
+
+  .filter-item,
+  .Footer a{
+    color: ${({ theme }) => theme.btnFilter};
+  }
+
+  .items-left,
+  .clearBtn,
+  .drag-drop-line,
+  .Footer{
+    color: ${({ theme }) => theme.itemsLeftClearCompletedDragAndDrop};
   }
 
   .todo-button,
-  .complete-btn {
-    border: 1px solid ${({ theme }) => theme.checkboxBorder}
+  .complete-btn{
+    border: 1px solid ${(theme) => theme.checkboxBorder};
   }
 
-  .todo-input,
-  .todo-item{
-    color: ${({ theme }) => theme.text}
-  }
-
-  .Form input::placeholder,
-  .complete-btn.completed .todo-item,
-  .items-left,
-  .clearBtn,
-  .filter-todo button,
-  .drag-drop-line,
-  .complete-btn button:focus,
-  .complete-btn button:hover,
-  .Footer {
-    color: ${({ theme }) => theme.placeholderAndCompletedTask}
-  }
-
-  
-  .todo-item,
-  .Footer{
-    background: ${({ theme }) => theme.todoBackground}
-    color: ${({ theme }) => theme.text}
-    border-bottom: ${({ theme }) => theme.todoBorder}
-  }
-
-  .clearBtn:hover,
-  .clearBtn:focus {
-    color: ${({ theme }) => theme.clearCompletedBtnHover}
+  .clearBtn:hover {
+    color: ${({ theme }) => theme.btnHoverClearCompleted};
   }
 
   .filter-todo button:focus {
-    color: ${({ theme }) => theme.btnFocus} 
+    color: ${({ theme }) => theme.btnFocusFilter};
   }
 
-  .filter-todo button:hover,
-  .List,
-  .Footer a:hover,
-  .Footer a:focus{
-    color: ${({ theme }) => theme.filtersBtnHover}
-  }
 
-  `;
+
+   `;
