@@ -1,24 +1,15 @@
-/* .filter-todo {
-  width: 500px;
-  margin-top: 50px;
-} */
-
-.filter-todo .buttons .filter-item {
+.filter-todo .filter-item {
   font-family: "Josefin Sans", sans-serif;
-  /* cursor: pointer;
+  cursor: pointer;
   font-weight: 400;
   border: none;
   background: none;
   outline: none;
   transition: 0.3s;
-  padding: 5px 10px; */
-  display: flex;
-  justify-content: center;
-
-  gap: 20px;
-  padding: 15px 20px;
+  padding: 5px 10px;
+  font-size: 14px;
 }
 
-.buttons .filter-item:hover {
+.filter-item:hover {
   font-weight: 700;
 }

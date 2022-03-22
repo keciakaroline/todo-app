@@ -94,8 +94,8 @@ export default function App() {
             />
             <ClearTask todos={todos} setTodos={setTodos} />
           </div>
-          <p className="drag-drop-line">Drag and drop to reorder list</p>
         </div>
+        <p className="drag-drop-line">Drag and drop to reorder list</p>
         <Footer />
       </main>
     </ThemeProvider>

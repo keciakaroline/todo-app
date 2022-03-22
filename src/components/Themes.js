@@ -10,10 +10,6 @@ export const lightTheme = {
   clearCompletedBtnHover: "hsl(235, 19%, 35%)",
   filtersBtnHover: "hsl(235, 21%, 11%)",
   btnFocus: "hsl(220, 98%, 61%)",
-
-  // 'hsl(236, 9%, 61%)',
-  // 'hsl(233, 11%, 84%)',
-  // 'hsl(235, 19%, 35%)',
 };
 
 export const darkTheme = {
@@ -26,10 +22,6 @@ export const darkTheme = {
   checkboxBorder: "hsl(234, 11%, 52%)",
   clearCompletedBtnHover: "hsl(234, 39%, 85%)",
   btnFocus: "hsl(220, 98%, 61%)",
-
-  // hsl(234, 11%, 52%),
-  // hsl(236, 33%, 92%),
-  // hsl(233, 14%, 35%)'
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -56,8 +48,8 @@ export const GlobalStyles = createGlobalStyle`
 
   .Form input::placeholder,
   .complete-btn.completed .todo-item,
-  .itensLeft,
-  .clear-completed.btn,
+  .items-left,
+  .clearBtn,
   .filter-todo button,
   .drag-drop-line,
   .complete-btn button:focus,
@@ -74,20 +66,17 @@ export const GlobalStyles = createGlobalStyle`
     border-bottom: ${({ theme }) => theme.todoBorder}
   }
 
-  .List {
-    border-bottom: ${({ theme }) => theme.todoBorder}
-  }
-
   .clearBtn:hover,
   .clearBtn:focus {
     color: ${({ theme }) => theme.clearCompletedBtnHover}
   }
 
-  .buttons button:focus {
+  .filter-todo button:focus {
     color: ${({ theme }) => theme.btnFocus} 
   }
 
-  .buttons button:hover,
+  .filter-todo button:hover,
+  .List,
   .Footer a:hover,
   .Footer a:focus{
     color: ${({ theme }) => theme.filtersBtnHover}

@@ -3,7 +3,8 @@
   align-items: center;
   overflow: hidden;
   padding: 0px;
-  border-bottom: 2px solid #e3e4ef;
+  outline: none;
+  border-bottom: 1px solid transparent;
 }
 
 .todo-item {

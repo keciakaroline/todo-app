@@ -1,5 +1,6 @@
 .items-left span {
   font-weight: 500;
+  font-size: 14px;
 }
 .clearBtn {
   font-family: "Josefin Sans", sans-serif;
@@ -10,4 +11,5 @@
   outline: none;
   transition: 0.3s;
   cursor: pointer;
+  font-size: 14px;
 }

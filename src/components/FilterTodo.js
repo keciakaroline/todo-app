@@ -9,33 +9,29 @@ export default function FilterTodo({ status, setStatus }) {
 
   return (
     <div className="filter-todo">
-      <div className="buttons">
-        <button
-          value="all"
-          onClick={statusHandler}
-          className={`filter-item ${status === "all" ? "active-filter" : ""}`}
-        >
-          All
-        </button>
-        <button
-          value="active"
-          onClick={statusHandler}
-          className={`filter-item ${
-            status === "active" ? "active-filter" : ""
-          }`}
-        >
-          Active
-        </button>
-        <button
-          value="completed"
-          onClick={statusHandler}
-          className={`filter-item ${
-            status === "completed" ? "active-filter" : ""
-          }`}
-        >
-          Completed
-        </button>
-      </div>
+      <button
+        value="all"
+        onClick={statusHandler}
+        className={`filter-item ${status === "all" ? "active-filter" : ""}`}
+      >
+        All
+      </button>
+      <button
+        value="active"
+        onClick={statusHandler}
+        className={`filter-item ${status === "active" ? "active-filter" : ""}`}
+      >
+        Active
+      </button>
+      <button
+        value="completed"
+        onClick={statusHandler}
+        className={`filter-item ${
+          status === "completed" ? "active-filter" : ""
+        }`}
+      >
+        Completed
+      </button>
     </div>
   );
 }
