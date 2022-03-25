@@ -11,8 +11,6 @@ export const lightTheme = {
   checkboxBorder: "hsl(236, 9%, 61%)",
   text: "hsl(235, 19%, 35%)",
   todoBorder: "hsl(0, 0%, 98%)",
-
-  //   checkboxBorder: "hsl(236, 9%, 61%)" ???
 };
 
 export const darkTheme = {
@@ -26,8 +24,6 @@ export const darkTheme = {
   checkboxBorder: "hsl(234, 11%, 52%)",
   text: "hsl(237, 25%, 84%)",
   todoBorder: "hsl(0, 0%, 98%)",
-
-  //   checkboxBorder: "hsl(234, 11%, 52%)", ???
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -37,6 +33,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .Form,
   .List,
+  .for-mobile .filter-todo,
   .container{
     background-color: ${({ theme }) => theme.todoBackground};
   }
