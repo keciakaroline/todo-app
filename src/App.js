@@ -87,14 +87,24 @@ export default function App() {
         />
         <div className="container">
           <ListContainer todos={todos} setTodos={setTodos} filter={filter} />
+
           <div className="items-filters-clear-container">
             <TaskLeft todos={todos} />
-            <FilterTodo
-              setStatus={setStatus} // Then go to where we have our selections
-            />
+            <div className="for-desktop">
+              <FilterTodo
+                setStatus={setStatus} // Then go to where we have our selections
+              />
+            </div>
             <ClearTask todos={todos} setTodos={setTodos} />
           </div>
         </div>
+
+        <div className="for-mobile">
+          <FilterTodo
+            setStatus={setStatus} // Then go to where we have our selections
+          />
+        </div>
+
         <p className="drag-drop-line">Drag and drop to reorder list</p>
         <Footer />
       </main>

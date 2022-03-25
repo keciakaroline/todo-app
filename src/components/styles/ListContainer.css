@@ -7,3 +7,9 @@
   margin-bottom: 0px;
   list-style-type: none;
 }
+
+@media (max-width: 375px) {
+  .todo-list {
+    font-size: 15px;
+  }
+}

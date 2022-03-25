@@ -74,3 +74,10 @@
   transition: 0.3s;
   background-image: url(./images/icon-check.svg);
 }
+
+@media (max-width: 375px) {
+  .todo-item {
+    height: 55px;
+    padding-left: 5px;
+  }
+}

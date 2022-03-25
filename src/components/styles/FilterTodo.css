@@ -14,3 +14,30 @@
   cursor: pointer;
   opacity: 0.8;
 }
+
+.for-mobile {
+  margin-top: 15px;
+  width: 90%;
+}
+
+.for-mobile .filter-todo {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  width: 100%;
+  padding: 15px 10% 13px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 375px) {
+  .for-mobile {
+    display: inline-block;
+  }
+  .filter-todo button {
+    font-size: 14px;
+    padding: 5px 10px;
+    font-weight: 600;
+    opacity: 0.8;
+  }
+}

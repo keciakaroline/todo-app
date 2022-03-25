@@ -36,7 +36,13 @@ html.dark body {
   align-items: center;
   padding: 18px 20px 16px;
 }
-/* @media (max-width: 375px) {
+
+@media (max-width: 375px) {
+  .App {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
   html.dark body {
     background-size: 100% 280px;
     background-image: url(./components/styles/images/bg-mobile-dark.jpg);
@@ -44,16 +50,14 @@ html.dark body {
 
   html body {
     background-image: url(./components/styles/images/bg-mobile-light.jpg);
+    background-size: 100% 280px;
   }
 
-  .container{
-    width: 550px
+  .container {
+    width: 320px;
+    margin-top: 20px;
   }
-
   .drag-drop-line {
-  position: absolute;
-  bottom: 25px;
-  font-weight: 500;
-  opacity: 0;
+    margin-top: 40px;
+  }
 }
-} */
