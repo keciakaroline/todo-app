@@ -97,7 +97,7 @@ export default function App() {
             }}
           >
             <Droppable droppableId="todo-1">
-              {(provided, snapshot) => (
+              {(provided, _) => (
                 <div ref={provided.innerRef} {...provided.droppableProps}>
                   <ListContainer
                     todos={todos}
