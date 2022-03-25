@@ -8,6 +8,7 @@ import { TaskLeft, ClearTask } from "./components/ClearTask";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from "./components/Themes";
 import "./App.css";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 export default function App() {
   // use state
@@ -86,7 +87,28 @@ export default function App() {
           setTodos={setTodos}
         />
         <div className="container">
-          <ListContainer todos={todos} setTodos={setTodos} filter={filter} />
+          <DragDropContext
+            onDragEnd={(param) => {
+              const srcI = param.source.index; //1st position of todo
+              const desI = param.destination.index; //destination position of todo
+              const [reOrder] = filter.splice(srcI, 1);
+              //console.log(param);
+              filter.splice(desI, 0, reOrder);
+            }}
+          >
+            <Droppable droppableId="todo-1">
+              {(provided, snapshot) => (
+                <div ref={provided.innerRef} {...provided.droppableProps}>
+                  <ListContainer
+                    todos={todos}
+                    setTodos={setTodos}
+                    filter={filter}
+                  />
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
 
           <div className="items-filters-clear-container">
             <TaskLeft todos={todos} />

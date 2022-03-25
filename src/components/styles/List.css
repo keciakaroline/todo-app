@@ -53,10 +53,21 @@
 .complete-btn:hover {
   border-color: hsl(280, 87%, 65%);
   /*background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));*/
+  /* color: black;
+  box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+  border: solid 3px transparent;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 2px 1000px 1px #fff inset; */
 }
 
 .complete-btn.completed {
-  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-image: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   border: none;
   opacity: 1 !important;
 }

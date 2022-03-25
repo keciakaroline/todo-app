@@ -37,7 +37,6 @@ export default function Form({ inputText, setinputText, todos, setTodos }) {
           value={inputText}
           onChange={inputHandler}
           onKeyDown={keyDownHandler}
-          onFocus
         />
       </form>
     </div>
