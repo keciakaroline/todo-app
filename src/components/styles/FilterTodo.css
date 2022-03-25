@@ -13,6 +13,7 @@
   transition: 0.3s;
   cursor: pointer;
   opacity: 0.8;
+  width: 30%;
 }
 
 .for-mobile {
@@ -29,18 +30,6 @@
   box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 450px) {
-  .for-mobile {
-    display: inline-block;
-  }
-  .filter-todo button {
-    font-size: 14px;
-    padding: 5px 10px;
-    font-weight: 600;
-    opacity: 0.8;
-  }
-}
-/* 
 @media (max-width: 375px) {
   .for-mobile {
     display: inline-block;
@@ -50,5 +39,6 @@
     padding: 5px 10px;
     font-weight: 600;
     opacity: 0.8;
+    width: fit-content;
   }
-} */
+}

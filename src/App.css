@@ -1,5 +1,5 @@
 .App {
-  width: 100%;
+  /* width: 1440px; */
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -10,6 +10,9 @@ html body {
   background-repeat: no-repeat;
   background-size: 100% 300px;
   font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 html.dark body {
@@ -28,8 +31,7 @@ html.dark body {
   margin-top: 50px;
 }
 .container {
-  width: 90%;
-  /* width: 737px; */
+  width: 91%;
   margin-top: 30px;
   border-radius: 5px;
   overflow: hidden;
@@ -54,7 +56,7 @@ html.dark body {
   }
 
   .container {
-    width: 320px;
+    width: 100%;
     margin-top: 20px;
   }
   .drag-drop-line {

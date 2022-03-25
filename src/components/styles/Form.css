@@ -4,14 +4,10 @@
   border-radius: 5px;
   padding-left: 20px;
   box-shadow: 10px 10px 60px rgba(0, 0, 0, 0.4);
-  width: 88%;
+  width: 90%;
   height: 70px;
 }
 
-input .todo-input {
-  width: max-content;
-  margin: auto;
-}
 .todo-input {
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
@@ -38,7 +34,7 @@ input .todo-input {
 
 @media (max-width: 375px) {
   .Form {
-    width: 300px;
+    width: 90%;
     height: 60px;
   }
 
