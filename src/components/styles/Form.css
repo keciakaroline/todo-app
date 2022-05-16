@@ -11,10 +11,11 @@
 .todo-input {
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
-  padding: 25px 20px 20.5px;
+  padding: 25px 0px 20px 20.5px;
   background: transparent;
   border: none;
   outline: none;
+  width: 600px;
 }
 
 .Form .todo-input::placeholder {
