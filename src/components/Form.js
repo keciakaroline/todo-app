@@ -2,6 +2,7 @@ import React from "react";
 import "./styles/Form.css";
 
 export default function Form({ inputText, setinputText, todos, setTodos }) {
+  const min_length = 2;
   // changing the value of inputText
   const inputHandler = (event) => {
     //console.log(event.target.value);
@@ -17,11 +18,19 @@ export default function Form({ inputText, setinputText, todos, setTodos }) {
   // Add a new todo
   const submitHandler = (event) => {
     event.preventDefault();
-    setTodos([
-      ...todos,
-      { text: inputText, completed: false, id: Math.random() * 1000 },
-    ]);
-    setinputText("");
+    if (inputText.length > min_length) {
+      setTodos([
+        ...todos,
+        {
+          text: inputText,
+          completed: false,
+          id: Math.random() * 1000,
+        },
+      ]);
+      setinputText("");
+    } else {
+      alert("You text is too small");
+    }
   };
 
   return (
@@ -31,6 +40,8 @@ export default function Form({ inputText, setinputText, todos, setTodos }) {
           <i className="fas fa-plus-square"></i>
         </button>
         <input
+          maxLength={50}
+          minLength={2}
           type="text"
           placeholder="Create a new todo..."
           className="todo-input"

@@ -1,10 +1,30 @@
 import React from "react";
-import List from "./List";
+import ListItem from "./ListItem";
 import "./styles/ListContainer.css";
 import { Draggable } from "react-beautiful-dnd";
 
 export default function ListContainer({ todos, setTodos, filter }) {
   //console.log(filter);
+
+  // delete action -> if the btn.id is = the input.id
+  const deleteHandler = (todo) => () => {
+    setTodos(todos.filter((element) => element.id !== todo.id));
+  };
+
+  // complete action -> run for each
+  const completeHandler = (todo) => () => {
+    setTodos(
+      todos.map((item) => {
+        if (item.id === todo.id) {
+          return {
+            ...item,
+            completed: !item.completed,
+          };
+        }
+        return item;
+      })
+    );
+  };
   return (
     <div className="List">
       <ul className="todo-list">
@@ -20,13 +40,12 @@ export default function ListContainer({ todos, setTodos, filter }) {
                 {...provided.draggableProps}
                 {...provided.dragHandleProps}
               >
-                <List
-                  todos={todos}
-                  setTodos={setTodos}
+                <ListItem
                   key={todo.id}
-                  text={todo.text}
                   todo={todo}
                   index={index}
+                  onCompleteHandler={completeHandler(todo)}
+                  onDeleteHandler={deleteHandler(todo)}
                 />
               </div>
             )}
