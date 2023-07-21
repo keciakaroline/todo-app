@@ -8,7 +8,8 @@ import { TaskLeft, ClearTask } from "./components/ClearTask";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from "./components/Themes";
 import "./App.css";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { listTodos, insertTodo, deleteTodo } from "./api/todo";
+import { DragDropContext, Droppable } from "react-beautiful-dnd";
 
 export default function App() {
   // use state
@@ -20,7 +21,9 @@ export default function App() {
 
   // run once when the app start
   useEffect(() => {
-    getLocalTodos();
+    listTodos().then((result) => {
+      setTodos(result.data);
+    });
   }, []);
 
   // use effect for everytime we change todos, status -> filter
@@ -78,13 +81,21 @@ export default function App() {
       <GlobalStyles />
 
       <main className="App">
-        <Header themeToggler={themeToggler} theme={theme} />
+        <Header
+          themeToggler={themeToggler}
+          theme={theme}
+        />
 
         <Form
           inputText={inputText}
           setinputText={setinputText}
           todos={todos}
-          setTodos={setTodos}
+          insertTodo={insertTodo}
+          refreshTodos={() =>
+            listTodos().then((result) => {
+              setTodos(result.data);
+            })
+          }
         />
         <div className="container">
           <DragDropContext
@@ -98,8 +109,17 @@ export default function App() {
           >
             <Droppable droppableId="todo-1">
               {(provided, _) => (
-                <div ref={provided.innerRef} {...provided.droppableProps}>
+                <div
+                  ref={provided.innerRef}
+                  {...provided.droppableProps}
+                >
                   <ListContainer
+                    refreshTodos={() =>
+                      listTodos().then((result) => {
+                        setTodos(result.data);
+                      })
+                    }
+                    deleteTodo={deleteTodo}
                     todos={todos}
                     setTodos={setTodos}
                     filter={filter}
@@ -117,7 +137,10 @@ export default function App() {
                 setStatus={setStatus} // Then go to where we have our selections
               />
             </div>
-            <ClearTask todos={todos} setTodos={setTodos} />
+            <ClearTask
+              todos={todos}
+              setTodos={setTodos}
+            />
           </div>
         </div>
 
