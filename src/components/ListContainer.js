@@ -3,12 +3,20 @@ import ListItem from "./ListItem";
 import "./styles/ListContainer.css";
 import { Draggable } from "react-beautiful-dnd";
 
-export default function ListContainer({ todos, setTodos, filter }) {
-  //console.log(filter);
-
+export default function ListContainer({
+  refreshTodos,
+  deleteTodo,
+  todos,
+  setTodos,
+  filter,
+}) {
   // delete action -> if the btn.id is = the input.id
+  // const deleteHandler = (todo) => () => {
+  //   setTodos(todos.filter((element) => element.id !== todo.id));
+  // };
+
   const deleteHandler = (todo) => () => {
-    setTodos(todos.filter((element) => element.id !== todo.id));
+    deleteTodo(todo.id).then(() => refreshTodos());
   };
 
   // complete action -> run for each
