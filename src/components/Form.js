@@ -1,7 +1,13 @@
 import React from "react";
 import "./styles/Form.css";
 
-export default function Form({ inputText, setinputText, todos, setTodos }) {
+export default function Form({
+  refreshTodos,
+  inputText,
+  setinputText,
+  todos,
+  insertTodo,
+}) {
   const min_length = 2;
   // changing the value of inputText
   const inputHandler = (event) => {
@@ -12,21 +18,19 @@ export default function Form({ inputText, setinputText, todos, setTodos }) {
   // add enter key event
   const keyDownHandler = (event) => {
     //event.preventDefault();
-    if (event.keyCode === 13) submitHandler();
+    if (event.keyCode === 13) submitHandler(event);
   };
 
   // Add a new todo
   const submitHandler = (event) => {
     event.preventDefault();
     if (inputText.length > min_length) {
-      setTodos([
-        ...todos,
-        {
-          text: inputText,
-          completed: false,
-          id: Math.random() * 1000,
-        },
-      ]);
+      insertTodo({
+        text: inputText,
+        completed: false,
+      }).then(() => {
+        refreshTodos();
+      });
       setinputText("");
     } else {
       alert("You text is too small");
@@ -36,7 +40,11 @@ export default function Form({ inputText, setinputText, todos, setTodos }) {
   return (
     <div className="Form">
       <form>
-        <button onClick={submitHandler} className="todo-button" type="submit">
+        <button
+          onClick={submitHandler}
+          className="todo-button"
+          type="submit"
+        >
           <i className="fas fa-plus-square"></i>
         </button>
         <input
