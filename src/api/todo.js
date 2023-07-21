@@ -21,6 +21,6 @@ export function deleteCompletedTodo() {
   return instance.delete("/todos/completed");
 }
 
-export function updateTodo(id) {
-  return instance.put(`/todos/${id}`);
+export function updateTodo(id, todo) {
+  return instance.put(`/todos/${id}`, todo);
 }

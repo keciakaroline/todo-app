@@ -9,6 +9,7 @@ export default function ListContainer({
   todos,
   setTodos,
   filter,
+  updateTodoHandler,
 }) {
   //* delete action
   const deleteHandler = (todo) => () => {
@@ -17,18 +18,13 @@ export default function ListContainer({
 
   //* complete action -> run for each
   const completeHandler = (todo) => () => {
-    setTodos(
-      todos.map((item) => {
-        if (item.id === todo.id) {
-          return {
-            ...item,
-            completed: !item.completed,
-          };
-        }
-        return item;
-      })
-    );
+    const updatedTodo = {
+      completed: !todo.completed,
+    };
+
+    updateTodoHandler(todo.id, updatedTodo);
   };
+
   return (
     <div className="List">
       <ul className="todo-list">

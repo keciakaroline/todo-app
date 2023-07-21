@@ -13,6 +13,7 @@ import {
   insertTodo,
   deleteTodo,
   deleteCompletedTodo,
+  updateTodo,
 } from "./api/todo";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 
@@ -24,20 +25,33 @@ export default function App() {
   const [filter, setFilter] = useState([]);
   const [theme, setTheme] = useState("light");
 
-  // run once when the app start
+  //* run once when the app start
   useEffect(() => {
     listTodos().then((result) => {
       setTodos(result.data);
     });
   }, []);
 
-  // use effect for everytime we change todos, status -> filter
+  //* to update a TODO
+  const updateTodoHandler = (id, updatedTodo) => {
+    updateTodo(id, updatedTodo)
+      .then((result) => {
+        listTodos().then((result) => {
+          setTodos(result.data);
+        });
+      })
+      .catch((error) => {
+        console.error("Error updating todo:", error);
+      });
+  };
+
+  //* use effect for everytime we change todos status -> filter
   useEffect(() => {
     filterHandler();
     saveLocalTodos();
   }, [todos, status]);
 
-  // create a filter
+  //* create a filter
   const filterHandler = () => {
     switch (status) {
       case "completed":
@@ -128,6 +142,7 @@ export default function App() {
                     todos={todos}
                     setTodos={setTodos}
                     filter={filter}
+                    updateTodoHandler={updateTodoHandler}
                   />
                   {provided.placeholder}
                 </div>
@@ -141,9 +156,15 @@ export default function App() {
               <FilterTodo setStatus={setStatus} />
             </div>
             <ClearTask
+              onUpdateHandler={updateTodoHandler}
               deleteCompletedTodo={deleteCompletedTodo}
               todos={todos}
               setTodos={setTodos}
+              refreshTodos={() =>
+                listTodos().then((result) => {
+                  setTodos(result.data);
+                })
+              }
             />
           </div>
         </div>
