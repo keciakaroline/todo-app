@@ -3,10 +3,10 @@ import "./styles/Form.css";
 
 export default function Form({
   refreshTodos,
+  insertTodo,
   inputText,
   setinputText,
   todos,
-  insertTodo,
 }) {
   const min_length = 2;
   // changing the value of inputText

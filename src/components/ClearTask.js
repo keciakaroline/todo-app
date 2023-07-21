@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/ClearTask.css";
 
-// create itemsLeft
+//* create itemsLeft
 export const TaskLeft = ({ todos }) => {
   const itemsLeft = () => {
     let completedItems = [];
@@ -16,8 +16,8 @@ export const TaskLeft = ({ todos }) => {
   );
 };
 
-export const ClearTask = ({ todos, setTodos }) => {
-  // delete all tasks
+//* delete all tasks
+export const ClearTask = ({ todos, setTodos, deleteCompletedTodo }) => {
   const clearTask = () => {
     let deleted = todos.filter((todo) => {
       return !todo.completed;
@@ -26,7 +26,11 @@ export const ClearTask = ({ todos, setTodos }) => {
   };
   return (
     <div className="ClearTask">
-      <button className="clearBtn" value="clear" onClick={clearTask}>
+      <button
+        className="clearBtn"
+        value="clear"
+        onClick={clearTask}
+      >
         Clear Completed
       </button>
     </div>

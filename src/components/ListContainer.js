@@ -10,16 +10,12 @@ export default function ListContainer({
   setTodos,
   filter,
 }) {
-  // delete action -> if the btn.id is = the input.id
-  // const deleteHandler = (todo) => () => {
-  //   setTodos(todos.filter((element) => element.id !== todo.id));
-  // };
-
+  //* delete action
   const deleteHandler = (todo) => () => {
     deleteTodo(todo.id).then(() => refreshTodos());
   };
 
-  // complete action -> run for each
+  //* complete action -> run for each
   const completeHandler = (todo) => () => {
     setTodos(
       todos.map((item) => {

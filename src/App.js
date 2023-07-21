@@ -8,7 +8,12 @@ import { TaskLeft, ClearTask } from "./components/ClearTask";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from "./components/Themes";
 import "./App.css";
-import { listTodos, insertTodo, deleteTodo } from "./api/todo";
+import {
+  listTodos,
+  insertTodo,
+  deleteTodo,
+  deleteCompletedTodo,
+} from "./api/todo";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 
 export default function App() {
@@ -133,11 +138,10 @@ export default function App() {
           <div className="items-filters-clear-container">
             <TaskLeft todos={todos} />
             <div className="for-desktop">
-              <FilterTodo
-                setStatus={setStatus} // Then go to where we have our selections
-              />
+              <FilterTodo setStatus={setStatus} />
             </div>
             <ClearTask
+              deleteCompletedTodo={deleteCompletedTodo}
               todos={todos}
               setTodos={setTodos}
             />
@@ -145,9 +149,7 @@ export default function App() {
         </div>
 
         <div className="for-mobile">
-          <FilterTodo
-            setStatus={setStatus} // Then go to where we have our selections
-          />
+          <FilterTodo setStatus={setStatus} />
         </div>
 
         <p className="drag-drop-line">Drag and drop to reorder list</p>
