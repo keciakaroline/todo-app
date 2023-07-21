@@ -108,7 +108,6 @@ export default function App() {
         <Form
           inputText={inputText}
           setinputText={setinputText}
-          todos={todos}
           insertTodo={insertTodo}
           refreshTodos={() =>
             listTodos().then((result) => {
@@ -139,8 +138,6 @@ export default function App() {
                       })
                     }
                     deleteTodo={deleteTodo}
-                    todos={todos}
-                    setTodos={setTodos}
                     filter={filter}
                     updateTodoHandler={updateTodoHandler}
                   />
@@ -156,10 +153,8 @@ export default function App() {
               <FilterTodo setStatus={setStatus} />
             </div>
             <ClearTask
-              onUpdateHandler={updateTodoHandler}
               deleteCompletedTodo={deleteCompletedTodo}
               todos={todos}
-              setTodos={setTodos}
               refreshTodos={() =>
                 listTodos().then((result) => {
                   setTodos(result.data);

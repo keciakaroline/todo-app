@@ -6,8 +6,6 @@ import { Draggable } from "react-beautiful-dnd";
 export default function ListContainer({
   refreshTodos,
   deleteTodo,
-  todos,
-  setTodos,
   filter,
   updateTodoHandler,
 }) {

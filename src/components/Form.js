@@ -6,7 +6,6 @@ export default function Form({
   insertTodo,
   inputText,
   setinputText,
-  todos,
 }) {
   const min_length = 2;
   // changing the value of inputText

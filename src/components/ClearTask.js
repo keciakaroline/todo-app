@@ -17,12 +17,15 @@ export const TaskLeft = ({ todos }) => {
 };
 
 //* delete all tasks
-export const ClearTask = ({ todos, setTodos, deleteCompletedTodo }) => {
+export const ClearTask = ({ todos, deleteCompletedTodo, refreshTodos }) => {
   const clearTask = () => {
-    let deleted = todos.filter((todo) => {
-      return !todo.completed;
-    });
-    setTodos(deleted);
+    deleteCompletedTodo()
+      .then(() => {
+        refreshTodos();
+      })
+      .catch((error) => {
+        console.log("Error deleting ALL", error);
+      });
   };
   return (
     <div className="ClearTask">
